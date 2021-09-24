@@ -35,4 +35,4 @@ def cli_parsing():
 
 parsing_args = cli_parsing()
 if parsing_args.players:
-    logging.info("Used --players: %s" % {parsing_args.players})
+    logging.info("Used --players: %d", parsing_args.players)
