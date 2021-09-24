@@ -23,7 +23,9 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 
 
 def cli_parsing():
-    players_help = '(Optional) Using --players allows you to select how many players will be in the game.\n' \
+    """ Parse the Command-line options """
+    players_help = '(Optional) Using --players allows you to select how ' \
+                   'many players will be in the game.' \
                    'Example:  --players=4, or --players 4.'
     parser = argparse.ArgumentParser(description='Initial Test of Parsing')
     parser.add_argument('--players', '--p', type=int, default=1, help=players_help)
@@ -33,4 +35,4 @@ def cli_parsing():
 
 parsing_args = cli_parsing()
 if parsing_args.players:
-    logging.info(f"Used --players: {parsing_args.players}")
+    logging.info("Used --players: %s" % {parsing_args.players})
