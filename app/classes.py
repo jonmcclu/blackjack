@@ -18,4 +18,18 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import logging
 logging.basicConfig(format='%(asctime)s - %(message)s',
-                    datefmt='%d-%b-%y %H:%M:%S',level=logging.INFO)
+                    datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+
+
+class Player:
+    def __init__(self):
+        self.name = ''
+        self.cards = []
+        self.score_round = 0
+        self.score_overall = 0
+
+
+class CardDeck:
+    def __init__(self):
+        self.total = 52
+        self.remaining = 0
