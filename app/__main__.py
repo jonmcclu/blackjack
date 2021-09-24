@@ -15,15 +15,16 @@ GNU Affero General Public License for more details.
 You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
-
+from core import *
 import logging
+
 logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
 
 
 def run():
     """ Summary:  this processes classes and functions from the app. """
-    logging.info('Hello this is an INFO log')
+    cli_parsing()
 
 
 if __name__ == '__main__':

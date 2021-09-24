@@ -16,6 +16,21 @@ You should have received a copy of the GNU Affero General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
+import argparse
 import logging
 logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+
+
+def cli_parsing():
+    players_help = '(Optional) Using --players allows you to select how many players will be in the game.\n' \
+                   'Example:  --players=4, or --players 4.'
+    parser = argparse.ArgumentParser(description='Initial Test of Parsing')
+    parser.add_argument('--players', '--p', type=int, default=1, help=players_help)
+    args = parser.parse_args()
+    return args
+
+
+parsing_args = cli_parsing()
+if parsing_args.players:
+    logging.info(f"Used --players: {parsing_args.players}")
