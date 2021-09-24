@@ -22,14 +22,34 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 
 
 class Player:
+    """  Player Class  """
     def __init__(self):
         self.name = ''
         self.cards = []
         self.score_round = 0
         self.score_overall = 0
 
+    def player_name(self):
+        """  player_name method  """
+        self.name = 'Get input from user'
+
+    def player_score(self):
+        """  player_score method  """
+        self.score_round = 0
+        self.score_overall = 0
+
 
 class CardDeck:
+    """  CardDeck Class  """
     def __init__(self):
         self.total = 52
-        self.remaining = 0
+        self.used = 0
+
+    def cards_total(self):
+        """  cards_total method  """
+        self.total = 52
+
+    def cards_used(self):
+        """  cards_used method  """
+        self.used = 0
+        self.total = self.total - self.used
