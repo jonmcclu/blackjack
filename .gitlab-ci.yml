@@ -31,6 +31,6 @@ before_script:
 
 test:
   script:
-    - python app/main.py test
+    - python app test
     - pip install pylint  # you can also use tox
     - pylint app

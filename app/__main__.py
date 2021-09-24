@@ -23,7 +23,7 @@ logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:
 
 def run():
     """ Summary:  this processes classes and functions from the app. """
-    return None
+    logging.info('Hello this is an INFO log')
 
 
 if __name__ == '__main__':
