@@ -30,6 +30,7 @@ def cli_parsing():
     parser = argparse.ArgumentParser(description='Initial Test of Parsing')
     parser.add_argument('--players', '--p', type=int, default=1, help=players_help)
     args = parser.parse_args()
+    print(args)
     return args
 
 

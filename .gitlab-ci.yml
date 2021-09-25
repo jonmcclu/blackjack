@@ -33,4 +33,4 @@ test:
   script:
     - python app test
     - pip install pylint  # you can also use tox
-    - pylint app
+    - cd app && pylint app
