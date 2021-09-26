@@ -30,10 +30,5 @@ def cli_parsing():
     parser = argparse.ArgumentParser(description='Initial Test of Parsing')
     parser.add_argument('--players', '--p', type=int, default=1, help=players_help)
     args = parser.parse_args()
-    print(args)
+    logging.info('%s - cli_parsing arguments:  %s', __name__, args)
     return args
-
-
-parsing_args = cli_parsing()
-if parsing_args.players:
-    logging.info("Used --players: %d", parsing_args.players)
