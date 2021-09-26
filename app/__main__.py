@@ -18,6 +18,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import logging
 from parsing import cli_parsing
+from classes import Game
+from classes import CardDeck
 
 logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
@@ -25,7 +27,21 @@ logging.basicConfig(format='%(asctime)s - %(message)s',
 
 def run():
     """ Summary:  this processes classes and functions from the app. """
-    cli_parsing()
+    args = cli_parsing()
+    game = Game()
+    game.set_player_numbers(args.players)
+    logging.info(game.get_player_number())
+
+    card_deck = CardDeck()
+    card_deck.create_deck()
+    print(len(card_deck.deck))
+    print(card_deck.get_card())
+    # tens = ['jack', 'queen', 'king']
+    # if any(i in card_deck.deck[2] for i in tens):
+    #     print('True')
+    # else:
+    #     print('False')
+    print(len(card_deck.deck))
 
 
 if __name__ == '__main__':

@@ -17,8 +17,33 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import logging
+import random
 logging.basicConfig(format='%(asctime)s - %(message)s',
                     datefmt='%d-%b-%y %H:%M:%S', level=logging.INFO)
+
+
+class Game:
+    """  Game Class  """
+    def __init__(self):
+        self.player_numbers = 0
+        self.rounds_max = 0
+        self.rounds = 0
+
+    def set_player_numbers(self, player_number):
+        """  set_player method  """
+        self.player_numbers = player_number
+
+    def get_player_number(self):
+        """  get_player method  """
+        return self.player_numbers
+
+    def set_rounds(self, round_count):
+        """  get_rounds method  """
+        self.rounds_max = round_count
+
+    def add_round(self):
+        """  add_round method  """
+        self.rounds += 1
 
 
 class Player:
@@ -44,6 +69,7 @@ class CardDeck:
     def __init__(self):
         self.total = 52
         self.used = 0
+        self.deck = []
 
     def cards_total(self):
         """  cards_total method  """
@@ -53,3 +79,16 @@ class CardDeck:
         """  cards_used method  """
         self.used = 0
         self.total = self.total - self.used
+
+    def create_deck(self):
+        """  create_deck method  """
+        suites = ['clubs', 'diamonds', 'hearts', 'spades']
+        faces = ['ace', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'jack', 'queen', 'king']
+        self.deck = [[f + ' of ' + s, f] for s in suites for f in faces]
+        return self.deck
+
+    def get_card(self):
+        """  get_card """
+        card = random.choice(self.deck)
+        self.deck.remove(card)
+        return card
